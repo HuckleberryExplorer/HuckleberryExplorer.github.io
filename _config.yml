@@ -1,5 +1,5 @@
 title: Huckleberry Explorer
-description: 永远在路上
-show_downloads: false
+description: Always on the way
+show_downloads: true
 google_analytics:
-theme: jekyll-theme-modernist
+theme: jekyll-theme-architect
