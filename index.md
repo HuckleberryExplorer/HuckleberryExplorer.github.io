@@ -4,7 +4,7 @@ layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./another-page.html).
+[远程线程dll注入](./posts/远程线程dll注入.html)
 
 There should be whitespace between paragraphs.
 
