@@ -2,9 +2,17 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# 米奇妙妙屋
 
-[远程线程dll注入](./posts/远程线程dll注入.html)
+- [ideavim配置](./posts/ideavim%E9%85%8D%E7%BD%AE.html)
+
+# PC安全技术
+
+- [远程线程dll注入](./posts/%E8%BF%9C%E7%A8%8B%E7%BA%BF%E7%A8%8Bdll%E6%B3%A8%E5%85%A5.html)
+
+# 魔术
+
+
 
 There should be whitespace between paragraphs.
 
