@@ -8,7 +8,7 @@ date:   2023-05-02 13:07:00 +0800
 
 自己用的比较顺手的ideavim配置
 
-# 依赖插件
+# 1. 依赖插件
 
 - IdeaVim
 - AceJump
@@ -16,7 +16,7 @@ date:   2023-05-02 13:07:00 +0800
 - IdeaVimExtension
 - Which-Key
 
-# .ideavimrc
+# 2. .ideavimrc
 
 ``` vim
 Plug 'tpope/vim-surround'
