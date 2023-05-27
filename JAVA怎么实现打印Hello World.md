@@ -5,6 +5,8 @@ categories:
 tag:    
 ---
 
+任何一个学过JAVA的人应该都对这段代码非常熟悉。空闲时间翻了下代码，看看它的底层是怎么实现的
+
 ```java
 public class HelloWorld {
     public static void main(String[] args) {
@@ -12,8 +14,6 @@ public class HelloWorld {
     }
 }
 ```
-
-任何一个学过JAVA的人应该都对这段代码非常熟悉。空闲时间翻了下代码，看看它的底层是怎么实现的
 
 首先点开`out`，发现它是`System`类中的一个`public static final`变量，类型为`PrintStream`。为了找到它是怎么初始化的，一直往前翻到`System`类的构造函数
 
