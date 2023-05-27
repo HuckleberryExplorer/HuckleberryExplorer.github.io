@@ -79,7 +79,7 @@ public class HelloWorld {
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527113149.png" alt="" width="450" data-align="center">
 </div>
 
-打开[glibc](https://sourceware.org/git/glibc.git)，在`write_nocancel.c`下看到提供的write方法实现，通过一堆的宏定义最终是一个系统调用，调用了linux的`write`方法
+打开glibc，在`write_nocancel.c`下看到提供的write方法实现，通过一堆的宏定义最终是一个系统调用，调用了linux的`write`方法
 
 <div align=center>
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527125423.png" alt="" width="400" data-align="center">
@@ -130,8 +130,9 @@ public class HelloWorld {
 参考：
 
 1. https://github.com/openjdk/jdk
-2. https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile
-3. https://www.linusakesson.net/programming/tty/index.php
-4. https://en.wikipedia.org/wiki/Devpts
-5. https://man7.org/linux/man-pages/man7/pty.7.html
-6. https://github.com/GNOME/vte
+2. https://sourceware.org/git/glibc.git
+3. https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile
+4. https://www.linusakesson.net/programming/tty/index.php
+5. https://en.wikipedia.org/wiki/Devpts
+6. https://man7.org/linux/man-pages/man7/pty.7.html
+7. https://github.com/GNOME/vte
