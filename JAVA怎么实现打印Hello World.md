@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  怎么用JAVA打印Hello World?
+title:  JAVA怎么实现打印Hello World?
 categories: 
 tag:    
 ---
@@ -21,7 +21,7 @@ public class HelloWorld {
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527001719.png" alt="" data-align="center" width="500">
 </div>
 
-从`System`类的注释中发现，VM会调用`initPhase1`这个函数来初始化这个类。先不管VM，先看下`initPhase1`函数做了什么
+从`System`类的注释中发现，VM会调用`initPhase1`这个方法来初始化这个类。先不管VM，先看下`initPhase1`方法做了什么
 
 <div align=center>
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527002208.png" alt="" data-align="center" width="666">
@@ -30,13 +30,13 @@ public class HelloWorld {
 发现它用`FileDescriptor.out`创建了`FileOutputStream`对象，再用这个对象创建了`PrintStream`对象，最后调用native的`setOut0`
 
 <div align=center>
-<img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527002734.png" alt="" data-align="center" width="545">
+<img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527002734.png" alt="" data-align="center" width="500">
 </div>
 
 在创建`PrintStream`对象时，先将`FileOutputStream`封装成`BufferedOutputStream`，然后把`BufferedOutputStream`封装成`OutputStreamWriter`。这一步中会根据传入的字符集创建`OutputStreamWriter`中的编码器`StreamEncoder`
 
 <div align=center>
-<img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527003340.png" alt="" data-align="center" width="537">
+<img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527003340.png" alt="" data-align="center" width="500">
 </div>
 
 这样`OutputStreamWriter`就创建好了，在print的时候会调用这个类的方法，最后根据调用栈发现调用了`FileOutputStream`中的`writeBytes`方法
@@ -55,7 +55,7 @@ public class HelloWorld {
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527112055.png" alt="" data-align="center" width="540">
 </div>
 
-找到在jdk中的实现，发现调用了`IO_Append`和`IO_Write`，而这两个是宏定义，指向了`handleWrite`函数
+找到在jdk中的实现，发现调用了`IO_Append`和`IO_Write`，而这两个是宏定义，指向了`handleWrite`方法
 
 <div align=center>
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527112307.png" alt="" data-align="center" width="234">
@@ -65,7 +65,7 @@ public class HelloWorld {
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527112200.png" alt="" width="433" data-align="center">
 </div>
 
-在不同的平台下，这个函数有不同的实现
+在不同的平台下，这个方法有不同的实现
 
 在windows下调用了`WriteFile`这个Win32 API
 
@@ -73,16 +73,16 @@ public class HelloWorld {
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527112524.png" alt="" data-align="center" width="565">
 </div>
 
-在linux下调用了`unistd.h`中定义的`write`函数
+在linux下调用了`unistd.h`中定义的`write`方法
 
 <div align=center>
-<img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527113149.png" alt="" width="500" data-align="center">
+<img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527113149.png" alt="" width="450" data-align="center">
 </div>
 
 打开[glibc](https://sourceware.org/git/glibc.git)，在`write_nocancel.c`下看到提供的write方法实现，通过一堆的宏定义最终是一个系统调用，调用了linux的`write`方法
 
 <div align=center>
-<img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527125423.png" alt="" width="498" data-align="center">
+<img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527125423.png" alt="" width="400" data-align="center">
 </div>
 
 在linux内核源代码中，找到`write`的SYSCALL，其中调用了`ksys_write`方法
@@ -91,7 +91,7 @@ public class HelloWorld {
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527130945.png" alt="" data-align="center" width="448">
 </div>
 
-这个方法中会获取fd，然后再通过`vfs_write`写入，顺着调用链一路找到了下面这个`write`函数
+这个方法中会获取fd，然后再通过`vfs_write`写入，顺着调用链一路找到了下面这个`write`方法
 
 <div align=center>
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527131847.png" alt="" data-align="center" width="444">
