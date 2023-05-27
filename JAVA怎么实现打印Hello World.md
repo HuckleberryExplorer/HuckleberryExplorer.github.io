@@ -127,8 +127,9 @@ public class HelloWorld {
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527141115.png" alt="" data-align="center" width="699">
 </div>
 
-参考：
+---
 
+参考:
 1. https://github.com/openjdk/jdk
 2. https://sourceware.org/git/glibc.git
 3. https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile
