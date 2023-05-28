@@ -109,7 +109,7 @@ public class HelloWorld {
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527133741.png" alt="" data-align="center" width="424">
 </div>
 
-从第一行就能看到，从`current`中找到了`files_struct`。`current`是一个宏定义，获取当前正在运行的任务`current_task`，而`current_task->files`是打开的文件信息
+从第一行就能看到，从`current`中找到了`files_struct`。`current`是一个宏定义，获取当前正在运行的任务`current_task`，而`current_task->files`是这个当前正在运行的任务所打开的文件信息
 
 <div align=center>
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527134424.png" alt="" data-align="center" width="441">
@@ -119,9 +119,9 @@ public class HelloWorld {
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527134520.png" alt="" data-align="center" width="311">
 </div>
 
-也就是说，它打开了这个虚拟文件系统中的虚拟文件，也是一个伪终端PTY，然后向里面写入
+**也就是说，进程打开了一个由虚拟文件系统管理的虚拟文件，它是一个伪终端PTY，然后向其中写入数据**
 
-在linux中输入tty，就可以看到对应的伪终端设备文件路径，还可以向另一个终端中打印东西
+在linux中输入tty，就可以看到对应的伪终端设备文件路径。往里写入数据，就可以实现向另一个终端中打印东西
 
 <div align=center>
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527141115.png" alt="" data-align="center" width="699">
