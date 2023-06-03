@@ -5,6 +5,7 @@ categories:
 tag:    
 ---
 
+[返回](./)
 
 自己用的比较顺手的ideavim配置
 

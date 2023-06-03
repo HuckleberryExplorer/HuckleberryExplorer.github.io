@@ -1,9 +1,11 @@
 ---
 layout: default
-title:  JAVA怎么实现打印Hello World?
+title:  JAVA打印Hello World的底层实现
 categories: 
-tag:    
+tag:
 ---
+
+[返回](./)
 
 任何一个学过JAVA的人应该都对这段代码非常熟悉。空闲时间翻了下代码，看看它的底层是怎么实现的
 
@@ -130,10 +132,11 @@ public class HelloWorld {
 ---
 
 参考:
-1. https://github.com/openjdk/jdk
-2. https://sourceware.org/git/glibc.git
-3. https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile
-4. https://www.linusakesson.net/programming/tty/index.php
-5. https://en.wikipedia.org/wiki/Devpts
-6. https://man7.org/linux/man-pages/man7/pty.7.html
-7. https://github.com/GNOME/vte
+
+1. [https://github.com/openjdk/jdk](https://github.com/openjdk/jdk)
+2. [https://sourceware.org/git/glibc.git](https://sourceware.org/git/glibc.git)
+3. [https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile](https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile)
+4. [https://www.linusakesson.net/programming/tty/index.php](https://www.linusakesson.net/programming/tty/index.php)
+5. [https://en.wikipedia.org/wiki/Devpts](https://en.wikipedia.org/wiki/Devpts)
+6. [https://man7.org/linux/man-pages/man7/pty.7.html](https://man7.org/linux/man-pages/man7/pty.7.html)
+7. [https://github.com/GNOME/vte](https://github.com/GNOME/vte)

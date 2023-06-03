@@ -1,9 +1,11 @@
 ---
-layout: post
+layout: default
 title:  rust圣经笔记
 categories: 
 tag:    
 ---
+
+[返回](./)
 
 ## Rust圣经
 
