@@ -5,6 +5,8 @@ categories:
 tag:    
 ---
 
+任何一个学过JAVA的人应该都对这段代码非常熟悉。空闲时间翻了下代码，看看它的底层是怎么实现的
+
 ```java
 public class HelloWorld {
     public static void main(String[] args) {
@@ -12,8 +14,6 @@ public class HelloWorld {
     }
 }
 ```
-
-任何一个学过JAVA的人应该都对这段代码非常熟悉。空闲时间翻了下代码，看看它的底层是怎么实现的
 
 首先点开`out`，发现它是`System`类中的一个`public static final`变量，类型为`PrintStream`。为了找到它是怎么初始化的，一直往前翻到`System`类的构造函数
 
@@ -85,7 +85,7 @@ public class HelloWorld {
 
 <img title="" src="https://raw.githubusercontent.com/HuckleberryExplorer/PicBed/main/20230527134520.png" alt="" data-align="center" width="311">
 
-也就是说，它打开了这个虚拟文件系统中的虚拟文件，也是一个伪终端PTY，然后向里面写入
+**也就是说，JAVA进程打开了一个终端TTY，它也是一个由虚拟文件系统管理的虚拟文件，然后向其中写入**
 
 在linux中输入tty，就可以看到对应的伪终端设备文件路径，还可以向另一个终端中打印东西
 
